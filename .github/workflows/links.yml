@@ -30,3 +30,4 @@ jobs:
         with:
           title: Dead links found
           content-filepath: ./lychee/out.md
+          labels: triage

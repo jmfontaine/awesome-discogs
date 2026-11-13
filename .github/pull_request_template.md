@@ -2,6 +2,8 @@
 The pull request title becomes the commit on main. Write it as a Conventional Commit
 without a scope: `feat: add <Name>` for a new entry, `fix: <description>` for a
 correction or a removal. Other types: docs, build, ci, chore.
+
+Replace N with the issue this pull request closes, or delete the line when there is none.
 -->
 
 Closes #N

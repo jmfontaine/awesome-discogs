@@ -40,7 +40,7 @@ Add each entry to the section that best describes its main purpose. The API Clie
 
 ## Removal
 
-Entries that stop meeting the criteria, such as archived or abandoned projects, are removed. Open an issue or a pull request when you spot one.
+Entries that stop meeting the criteria, such as archived or abandoned projects, are removed. When you spot one, open an issue with the "Report a problem" form, or a pull request.
 
 ## Pull Requests
 
