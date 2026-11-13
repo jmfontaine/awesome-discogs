@@ -1,0 +1,6 @@
+# Discogs puts its hosts behind bot protection that answers automated requests, including those from CI runners, with 403,
+# so links to them can't be checked automatically.
+exclude = ['^https://([a-z0-9-]+\.)?discogs\.com/']
+
+max_retries = 3
+accept = ["200..=299", "429"]
