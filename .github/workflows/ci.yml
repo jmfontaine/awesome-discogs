@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+# Only the `CI passed` job is a required check, and it needs every other job, so jobs can be added or renamed without
+# touching the ruleset. Keep its `needs` in step with the jobs.
+
+jobs:
+  awesome-lint:
+    name: awesome-lint
+    runs-on: ubuntu-latest
+    steps:
+      # awesome-lint reads the git history, so it needs a full clone.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - run: npx --yes awesome-lint README.md
+
+  links:
+    name: Links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: --config lychee.toml README.md CONTRIBUTING.md
+
+  ci-passed:
+    name: CI passed
+    needs: [awesome-lint, links]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail unless every job passed
+        if: contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')
+        run: exit 1
