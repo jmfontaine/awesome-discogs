@@ -1,6 +1,6 @@
 # Contribution Guidelines
 
-This list curates the best Discogs tools, not every one of them. Before you open a pull request, check that the entry meets the criteria below.
+This list curates the best Discogs tools, not every one of them. Before you open a pull request, check that the entry meets the criteria below. To suggest a tool without editing the list yourself, open an issue with the "Suggest an entry" form.
 
 ## Inclusion Criteria
 
@@ -40,11 +40,12 @@ Add each entry to the section that best describes its main purpose. The API Clie
 
 ## Removal
 
-Entries that stop meeting the criteria, such as archived or abandoned projects, are removed. Open an issue or a pull request when you spot one.
+Entries that stop meeting the criteria, such as archived or abandoned projects, are removed. When you spot one, open an issue with the "Report a problem" form, or a pull request.
 
 ## Pull Requests
 
 - Add one entry per pull request.
-- Title the pull request `Add <Name>`.
+- Title the pull request as a [Conventional Commit](https://www.conventionalcommits.org/) without a scope: `feat: add <Name>` for a new entry, `fix: <description>` for a correction or a removal. The title becomes the commit on `main`.
 - Explain in the description why the tool deserves a place in the list.
+- Sign your commits if you can. Edits made in GitHub's web editor are signed for you.
 - Run `just lint` and `just links` before you submit, or let the checks run on the pull request.

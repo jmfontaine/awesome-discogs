@@ -1,0 +1,39 @@
+name: Suggest an entry
+description: A Discogs tool that belongs in the list
+labels: ["triage"]
+body:
+  - type: input
+    id: link
+    attributes:
+      label: Link
+      description: The project's repository or official website.
+    validations:
+      required: true
+  - type: input
+    id: section
+    attributes:
+      label: Section
+      description: The section of the list it belongs in.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What the tool does, and why it deserves a place in the list.
+    validations:
+      required: true
+  - type: checkboxes
+    id: criteria
+    attributes:
+      label: Inclusion criteria
+      description: See [CONTRIBUTING.md](https://github.com/jmfontaine/awesome-discogs/blob/main/CONTRIBUTING.md#inclusion-criteria).
+      options:
+        - label: It uses the Discogs API, the data dumps, or the Discogs site as a core part of what it does.
+          required: true
+        - label: It has a commit or a release in the last 12 months, and its repository is not archived.
+          required: true
+        - label: Its readme or website explains how to install and use it.
+          required: true
+        - label: It complies with the Discogs API Terms of Use.
+          required: true

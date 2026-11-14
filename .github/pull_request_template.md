@@ -1,8 +1,28 @@
-<!-- Title: Add <Name> -->
+<!--
+The pull request title becomes the commit on main. Write it as a Conventional Commit
+without a scope: `feat: add <Name>` for a new entry, `fix: <description>` for a
+correction or a removal. Other types: docs, build, ci, chore.
 
-**Why it belongs in the list:**
+Replace N with the issue this pull request closes, or delete the line when there is none.
+-->
 
-## Checklist
+Closes #N
+
+## Summary
+
+<!-- What changes, and why. For a new entry: why the tool deserves a place in the list. -->
+
+## Verification
+
+<!-- How anyone can confirm the change works: `just lint`, `just links`, or the checks on this pull request. -->
+
+## Scope notes
+
+<!-- Anything left out on purpose, and anything a reviewer should look at first. -->
+
+## New entry checklist
+
+<!-- Remove this section when the pull request adds no entry. -->
 
 - [ ] I read the [contribution guidelines](https://github.com/jmfontaine/awesome-discogs/blob/main/CONTRIBUTING.md).
 - [ ] The tool uses the Discogs API, the data dumps, or the Discogs site as a core part of what it does.
