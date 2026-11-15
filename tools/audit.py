@@ -1,11 +1,11 @@
 """Check every listed GitHub project against the inclusion criteria again."""
 
-from collections.abc import Iterable
+from collections.abc import Callable, Iterable
 from datetime import date
 
 from tools.decisions import Decision, kept_for
 from tools.github import GitHub
-from tools.health import assess
+from tools.health import assess, license_finding
 from tools.readme import Entry
 from tools.urls import github_repo
 
@@ -17,6 +17,7 @@ def audit(
     decisions: list[Decision],
     github: GitHub,
     *,
+    osi_licenses: Callable[[], frozenset[str]],
     today: date,
 ) -> Findings:
     """Return each listed project or kept decision to review, with its findings."""
@@ -25,14 +26,19 @@ def audit(
         repo = github_repo(entry.url)
         if repo is None:
             continue
+        status = github.status(*repo)
         # A listed project only gets older, so its age isn't audited.
         findings = assess(
             *repo,
-            github.status(*repo),
+            status,
             kept=kept_for(decisions, entry.url),
             today=today,
             new_entry=False,
         )
+        if status is not None and (
+            finding := license_finding(status, entry.source, osi_licenses())
+        ):
+            findings.append(finding)
         if findings:
             where = entry.section
             if entry.subsection:

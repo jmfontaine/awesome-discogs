@@ -11,8 +11,12 @@ from tools.github import GitHubError, RepoStatus
 from tools.readme import Entry
 
 TODAY = date(2026, 11, 15)
-HEALTHY = RepoStatus("a/one", False, date(2020, 1, 1), date(2026, 11, 1), True)
+HEALTHY = RepoStatus("a/one", False, date(2020, 1, 1), date(2026, 11, 1), True, "MIT")
 INACTIVE = replace(HEALTHY, last_activity=date(2024, 1, 2))
+
+
+def osi() -> frozenset[str]:
+    return frozenset({"MIT"})
 
 
 def entry(name: str, subsection: str | None = None) -> Entry:
@@ -43,7 +47,7 @@ def test_findings_name_the_section():
         }
     )
     entries = [entry("one"), entry("two", "Python"), entry("three")]
-    assert audit(entries, [], github, today=TODAY) == [
+    assert audit(entries, [], github, osi_licenses=osi, today=TODAY) == [
         ("[one](https://github.com/a/one) (Tools)", ["repository archived"]),
         (
             "[two](https://github.com/a/two) (API Clients > Python)",
@@ -55,10 +59,10 @@ def test_findings_name_the_section():
 def test_kept_decision_excuses_inactivity_until_it_expires():
     github = FakeGitHub({"a/one": INACTIVE})
     current = kept("one", date(2027, 1, 1))
-    assert audit([entry("one")], [current], github, today=TODAY) == []
+    assert audit([entry("one")], [current], github, osi_licenses=osi, today=TODAY) == []
 
     expired = kept("one", date(2026, 11, 1))
-    assert audit([entry("one")], [expired], github, today=TODAY) == [
+    assert audit([entry("one")], [expired], github, osi_licenses=osi, today=TODAY) == [
         (
             "[one](https://github.com/a/one) (Tools)",
             ["no commit or release since 2024-01-02"],
@@ -76,8 +80,23 @@ def test_kept_decision_excuses_inactivity_until_it_expires():
 def test_entry_outside_github_is_not_looked_up():
     github = FakeGitHub()
     site = Entry(10, "Tools", None, "Site", "https://example.com/site", "Tool.")
-    assert audit([site], [], github, today=TODAY) == []
+    assert audit([site], [], github, osi_licenses=osi, today=TODAY) == []
     assert github.calls == []
+
+
+def test_source_marker_is_audited():
+    github = FakeGitHub({"a/one": replace(HEALTHY, license="BUSL-1.1")})
+    assert audit([entry("one")], [], github, osi_licenses=osi, today=TODAY) == [
+        (
+            "[one](https://github.com/a/one) (Tools)",
+            [
+                "its license, BUSL-1.1, isn't OSI-approved, "
+                "so mark it (source available)"
+            ],
+        )
+    ]
+    unidentified = FakeGitHub({"a/one": replace(HEALTHY, license="NOASSERTION")})
+    assert audit([entry("one")], [], unidentified, osi_licenses=osi, today=TODAY) == []
 
 
 def test_render():
@@ -133,7 +152,7 @@ def test_main_exit_codes(tmp_path, monkeypatch, capsys, status, code, output):
         f"--report={report}",
     ]
 
-    assert main(argv, github=FakeGitHub({"a/one": status})) == code
+    assert main(argv, github=FakeGitHub({"a/one": status}), osi_licenses=osi) == code
     assert capsys.readouterr().out == output
     assert report.exists() == (code == 1)
 
@@ -150,5 +169,5 @@ def test_main_exits_2_when_github_fails(tmp_path, monkeypatch, capsys):
             raise GitHubError("GET https://api.github.com/repos/a/one failed")
 
     argv = ["audit", f"--readme={readme}", f"--decisions={decisions}"]
-    assert main(argv, github=FailingGitHub()) == 2
+    assert main(argv, github=FailingGitHub(), osi_licenses=osi) == 2
     assert "failed" in capsys.readouterr().out

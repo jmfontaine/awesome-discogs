@@ -78,14 +78,17 @@ def _audit(
     args: argparse.Namespace,
     entries: list[Entry],
     decisions: list[Decision],
-    github: GitHub | None,
+    github: GitHub,
+    osi_licenses: Callable[[], frozenset[str]],
     *,
     annotations: bool,
 ) -> int:
     """Print the audit findings; exit 1 with findings, 0 without."""
     try:
-        findings = audit(entries, decisions, github or _github(), today=args.today)
-    except GitHubError as error:
+        findings = audit(
+            entries, decisions, github, osi_licenses=osi_licenses, today=args.today
+        )
+    except (GitHubError, LicenseListError) as error:
         return _fail(str(error), annotations=annotations)
     if not findings:
         print("No findings.")
@@ -110,7 +113,14 @@ def main(
     decisions, decision_problems = load(args.decisions, today=args.today)
 
     if args.command == "audit":
-        return _audit(args, entries, decisions, github, annotations=annotations)
+        return _audit(
+            args,
+            entries,
+            decisions,
+            github or _github(),
+            osi_licenses or cache(osi_approved),
+            annotations=annotations,
+        )
 
     found: list[Problem]
     if args.command == "check":
