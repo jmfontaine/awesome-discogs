@@ -35,9 +35,37 @@ jobs:
         with:
           args: --config lychee.toml README.md CONTRIBUTING.md
 
+  tools:
+    name: Tools
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+      - run: uv sync --locked
+      - run: uv run ruff format --check
+      - run: uv run ruff check
+      - run: uv run pytest
+
+  entries:
+    name: Entries
+    runs-on: ubuntu-latest
+    steps:
+      # The pull request check reads README.md from the merge commit's first parent.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+      - run: uv run --locked python -m tools check
+      - name: Check the entries this pull request adds
+        if: github.event_name == 'pull_request'
+        env:
+          AUTHOR_ASSOCIATION: ${{ github.event.pull_request.author_association }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: uv run --locked python -m tools pr --base HEAD^1 --author-association "$AUTHOR_ASSOCIATION"
+
   ci-passed:
     name: CI passed
-    needs: [awesome-lint, links]
+    needs: [awesome-lint, links, tools, entries]
     if: always()
     runs-on: ubuntu-latest
     steps:
