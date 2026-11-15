@@ -70,12 +70,8 @@ def check_pr(
         is_new = entry in added
         repo = github_repo(entry.url)
         if repo is None:
-            if is_new:
-                report(
-                    entry,
-                    "not on GitHub, so check the inclusion criteria by hand",
-                    "notice",
-                )
+            what = "inclusion criteria" if is_new else "source marker"
+            report(entry, f"not on GitHub, so check the {what} by hand", "notice")
             continue
         status = github.status(*repo)
         if is_new:
@@ -87,6 +83,8 @@ def check_pr(
                 new_entry=True,
             ):
                 report(entry, finding)
+        elif status is None:
+            report(entry, "repository not found")
         if status is None:
             continue
         if status.license == "NOASSERTION":

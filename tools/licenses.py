@@ -1,7 +1,7 @@
 """Tell open source licenses apart, using the SPDX license list's OSI flag."""
 
+import http.client
 import json
-import urllib.error
 import urllib.request
 
 SPDX_LICENSES = "https://spdx.org/licenses/licenses.json"
@@ -20,7 +20,7 @@ def osi_approved() -> frozenset[str]:
     try:
         with urllib.request.urlopen(request, timeout=TIMEOUT_SECONDS) as response:
             licenses = json.load(response)["licenses"]
-    except (urllib.error.URLError, TimeoutError, ValueError, KeyError) as error:
+    except (OSError, http.client.HTTPException, ValueError, KeyError) as error:
         raise LicenseListError(f"GET {SPDX_LICENSES} failed: {error}") from error
     return frozenset(
         license["licenseId"] for license in licenses if license.get("isOsiApproved")
