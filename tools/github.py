@@ -21,6 +21,9 @@ class RepoStatus:
     first_commit: date | None
     last_activity: date | None
     has_readme: bool
+    # SPDX identifier of the license GitHub detects: NOASSERTION when it finds a
+    # license it can't identify, None when it finds none.
+    license: str | None
 
 
 class GitHubError(Exception):
@@ -100,4 +103,5 @@ class GitHub:
             first_commit=first_commit,
             last_activity=max(activity, default=None),
             has_readme=code != 404,
+            license=(repository["license"] or {}).get("spdx_id"),
         )

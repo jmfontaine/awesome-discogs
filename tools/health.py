@@ -48,3 +48,30 @@ def assess(
             f"so from {status.first_commit + min_age}"
         )
     return findings
+
+
+def license_finding(
+    status: RepoStatus, source: str | None, osi_licenses: frozenset[str]
+) -> str | None:
+    """Return why the entry's source marker doesn't match the repository's license.
+
+    An unidentified license (NOASSERTION) gives None: only a person can tell.
+    """
+    license = status.license
+    if license == "NOASSERTION":
+        return None
+    if license in osi_licenses:
+        if source is None:
+            return None
+        return f"its license, {license}, is open source, so drop ({source})"
+    if source == "source available":
+        return None
+    terms = f"license {license}" if license else "no license"
+    if source == "closed source":
+        return (
+            f"its source code is public under {terms}, "
+            "so replace (closed source) with (source available)"
+        )
+    if license is None:
+        return "it has no license, so mark it (source available)"
+    return f"its license, {license}, isn't OSI-approved, so mark it (source available)"

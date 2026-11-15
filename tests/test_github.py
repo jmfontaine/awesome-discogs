@@ -4,7 +4,12 @@ import pytest
 
 from tools.github import GitHub, RepoStatus
 
-REPO = {"full_name": "Owner/Repo", "archived": False, "default_branch": "main"}
+REPO = {
+    "full_name": "Owner/Repo",
+    "archived": False,
+    "default_branch": "main",
+    "license": {"spdx_id": "MIT"},
+}
 COMMITS = "/repos/Owner/Repo/commits?sha=main&per_page=1"
 LAST_PAGE = "https://api.github.com/repositories/1/commits?sha=main&per_page=1&page=90"
 
@@ -55,6 +60,7 @@ def test_release_newer_than_last_commit_counts_as_activity(monkeypatch):
         first_commit=date(2019, 5, 1),
         last_activity=date(2025, 1, 10),
         has_readme=True,
+        license="MIT",
     )
 
 
@@ -87,10 +93,11 @@ def test_single_page_of_commits_and_no_release_or_readme(monkeypatch):
         pytest.param({"/repos/owner/repo": (404, None, "")}, None, id="not-found"),
         pytest.param(
             {
+                "/repos/owner/repo": (200, {**REPO, "license": None}, ""),
                 COMMITS: (409, None, ""),
                 "/repos/Owner/Repo/releases/latest": (404, None, ""),
             },
-            RepoStatus("Owner/Repo", False, None, None, True),
+            RepoStatus("Owner/Repo", False, None, None, True, None),
             id="empty",
         ),
     ],
