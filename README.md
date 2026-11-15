@@ -18,8 +18,8 @@
 ## Official Resources
 
 - [API Documentation](https://www.discogs.com/developers) - REST API for the database, marketplace, collections, and wantlists.
-- [API Terms of Use](https://support.discogs.com/hc/en-us/articles/360009334593-API-Terms-of-Use) - Rules every application using the API must follow.
 - [API Forum](https://www.discogs.com/forum/topic/1082) - Official forum for API questions and announcements.
+- [API Terms of Use](https://support.discogs.com/hc/en-us/articles/360009334593-API-Terms-of-Use) - Rules every application using the API must follow.
 - [Data Dumps](https://data.discogs.com/) - Monthly XML exports of artists, labels, masters, and releases.
 
 ## API Clients
