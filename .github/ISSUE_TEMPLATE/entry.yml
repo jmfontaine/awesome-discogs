@@ -26,7 +26,7 @@ body:
   - type: checkboxes
     id: criteria
     attributes:
-      label: Inclusion criteria
+      label: Inclusion Criteria
       description: See [CONTRIBUTING.md](https://github.com/jmfontaine/awesome-discogs/blob/main/CONTRIBUTING.md#inclusion-criteria).
       options:
         - label: It uses the Discogs API, the data dumps, or the Discogs site as a core part of what it does.

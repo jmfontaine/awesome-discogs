@@ -19,5 +19,5 @@ body:
   - type: textarea
     id: acceptance-criteria
     attributes:
-      label: Acceptance criteria
+      label: Acceptance Criteria
       description: What the list should say instead, or whether the entry should be removed.
