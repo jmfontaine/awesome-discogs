@@ -7,11 +7,12 @@ import sys
 from datetime import UTC, date, datetime
 from pathlib import Path
 
-from tools.decisions import cross_check, load
+from tools.audit import audit, render
+from tools.decisions import Decision, cross_check, load
 from tools.github import GitHub, GitHubError
 from tools.pr import check_pr
 from tools.problems import Problem, emit
-from tools.readme import parse
+from tools.readme import Entry, parse
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -43,6 +44,14 @@ def _parser() -> argparse.ArgumentParser:
         required=True,
         help="the pull request author's association, such as OWNER or NONE",
     )
+    audit_command = commands.add_parser(
+        "audit",
+        parents=[common],
+        help="report listed GitHub projects that no longer meet the criteria",
+    )
+    audit_command.add_argument(
+        "--report", type=Path, help="write the findings to this Markdown file"
+    )
     return parser
 
 
@@ -62,6 +71,29 @@ def _fail(message: str, *, annotations: bool) -> int:
     return 2
 
 
+def _audit(
+    args: argparse.Namespace,
+    entries: list[Entry],
+    decisions: list[Decision],
+    github: GitHub | None,
+    *,
+    annotations: bool,
+) -> int:
+    """Print the audit findings; exit 1 with findings, 0 without."""
+    try:
+        findings = audit(entries, decisions, github or _github(), today=args.today)
+    except GitHubError as error:
+        return _fail(str(error), annotations=annotations)
+    if not findings:
+        print("No findings.")
+        return 0
+    for subject, items in findings:
+        print(f"{subject}: {'; '.join(items)}.")
+    if args.report:
+        args.report.write_text(render(findings), encoding="utf-8")
+    return 1
+
+
 def main(argv: list[str] | None = None, github: GitHub | None = None) -> int:
     args = _parser().parse_args(argv)
     annotations = os.environ.get("GITHUB_ACTIONS") == "true"
@@ -69,6 +101,9 @@ def main(argv: list[str] | None = None, github: GitHub | None = None) -> int:
 
     entries, problems = parse(args.readme.read_text(encoding="utf-8"), readme_path)
     decisions, decision_problems = load(args.decisions, today=args.today)
+
+    if args.command == "audit":
+        return _audit(args, entries, decisions, github, annotations=annotations)
 
     found: list[Problem]
     if args.command == "check":
