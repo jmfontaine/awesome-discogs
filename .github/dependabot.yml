@@ -12,3 +12,16 @@ updates:
       actions:
         patterns:
           - "*"
+  - package-ecosystem: "uv"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    versioning-strategy: "lockfile-only"
+    commit-message:
+      prefix: "build"
+    labels: ["dependencies", "build"]
+    groups:
+      python-packages:
+        patterns:
+          - "*"

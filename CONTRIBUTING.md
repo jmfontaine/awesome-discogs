@@ -95,9 +95,11 @@ The maintainers paste the Reply when closing; `<…>` marks the parts to fill in
 
 ## Pull Requests
 
-- Add one entry per pull request.
+- Add one entry per pull request; the checks enforce it for contributors outside the maintainers.
 - Title the pull request as a [Conventional Commit](https://www.conventionalcommits.org/) without a scope: `feat: add <Name>` for a new entry, `fix: <description>` for a correction or a removal. The title becomes the commit on `main`.
 - Explain in the description why the tool deserves a place in the list.
 - Sign your commits if you can. Edits made in GitHub's web editor are signed for you.
 - Check the two entries above and below yours. If one no longer meets the criteria, say so in the pull request description.
-- Run `just lint` and `just links` before you submit, or let the checks run on the pull request.
+- Run `just lint` (needs Node.js and uv) and `just links` before you submit, or let the checks run on the pull request.
+- For each new GitHub-hosted entry, the pull request checks also confirm that the repository exists under the linked name, isn't archived, has a readme, has a commit or a release in the last 12 months, and has a first commit at least 180 days old.
+- To change the checks themselves, run `just qa`.
