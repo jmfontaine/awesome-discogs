@@ -138,6 +138,21 @@ def test_changed_marker_on_a_listed_entry_is_checked_alone():
     assert github.calls == ["a/one"]
 
 
+def test_changed_marker_that_cant_be_checked_is_reported():
+    gone = "https://github.com/a/gone"
+    site = "https://example.com/site"
+    base = [entry("Gone", gone, 10), entry("Site", site, 11)]
+    remarked = [
+        entry("Gone", gone, 10, description="T (source available)."),
+        entry("Site", site, 11, description="T (closed source)."),
+    ]
+    problems = check(remarked, base, FakeGitHub({"a/gone": None}))
+    assert [(p.level, p.message) for p in problems] == [
+        ("error", "Gone: repository not found"),
+        ("notice", "Site: not on GitHub, so check the source marker by hand"),
+    ]
+
+
 def test_license_list_is_fetched_only_when_needed():
     fetched = []
 
