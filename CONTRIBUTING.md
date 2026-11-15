@@ -102,4 +102,5 @@ The maintainers paste the Reply when closing; `<…>` marks the parts to fill in
 - Check the two entries above and below yours. If one no longer meets the criteria, say so in the pull request description.
 - Run `just lint` (needs Node.js and uv) and `just links` before you submit, or let the checks run on the pull request.
 - For each new GitHub-hosted entry, the pull request checks also confirm that the repository exists under the linked name, isn't archived, has a readme, has a commit or a release in the last 12 months, and has a first commit at least 180 days old.
+- For each GitHub-hosted entry that is new or whose source marker changes, the pull request checks also compare the marker with the license GitHub detects, using the OSI approval in the [SPDX License List](https://spdx.org/licenses/).
 - To change the checks themselves, run `just qa`.

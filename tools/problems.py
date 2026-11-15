@@ -4,13 +4,15 @@ from collections.abc import Iterable
 from dataclasses import dataclass
 from typing import Literal
 
+Level = Literal["error", "notice"]
+
 
 @dataclass(frozen=True)
 class Problem:
     path: str
     line: int | None
     message: str
-    level: Literal["error", "notice"] = "error"
+    level: Level = "error"
 
 
 def emit(problems: Iterable[Problem], *, annotations: bool) -> None:
