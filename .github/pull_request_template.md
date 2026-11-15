@@ -33,5 +33,5 @@ Closes #N
 - [ ] It complies with the Discogs API Terms of Use.
 - [ ] The entry is in the right section, in alphabetical order.
 - [ ] The description starts with a capital letter, ends with a period, and doesn't repeat the name.
-- [ ] Paid or closed-source tools carry the `(paid)` or `(closed source)` marker.
+- [ ] Paid, source-available, and closed-source tools carry the `(paid)`, `(source available)`, or `(closed source)` marker.
 - [ ] I checked the two entries above and below mine.

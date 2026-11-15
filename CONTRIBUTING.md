@@ -12,7 +12,7 @@ An entry must be:
 - **Documented.** Its readme or website explains how to install and use it.
 - **Compliant with the [API Terms of Use](https://support.discogs.com/hc/en-us/articles/360009334593-API-Terms-of-Use).** Tools that work by scraping the site against those terms are not accepted.
 
-Paid and closed-source tools are accepted when they meet the same criteria. Flag them with the markers below.
+Paid, source-available and closed-source tools are accepted when they meet the same criteria. Flag them with the markers below.
 
 ## What Does Not Qualify
 
@@ -32,8 +32,8 @@ Paid and closed-source tools are accepted when they meet the same criteria. Flag
 - Separate the link and the description with ` - ` (space, hyphen, space).
 - Start the description with a capital letter and end it with a period.
 - Describe what the tool does in one sentence, without repeating the project's name.
-- Leave out marketing words: best, powerful, amazing, awesome, ultimate, seamless, effortless, blazing, cutting-edge, state-of-the-art, world-class, revolutionary. Don't call a tool open source; the `(closed source)` marker covers the difference.
-- Add `(paid)` before the final period when the main features require payment, and `(closed source)` when the source code is not public. Combine them as `(paid, closed source)`.
+- Leave out marketing words: best, powerful, amazing, awesome, ultimate, seamless, effortless, blazing, cutting-edge, state-of-the-art, world-class, revolutionary. Unmarked entries are open source, so don't say it; the markers flag the rest.
+- Add `(paid)` before the final period when the main features require payment. Add `(source available)` when the source code is public but not under a license approved by the [Open Source Initiative](https://opensource.org/licenses), including code published without a license, and `(closed source)` when the source code is not public. Combine them as `(paid, source available)` or `(paid, closed source)`.
 - Use an `https` link.
 - Keep entries in alphabetical order within their section.
 - Don't hard-wrap lines.
