@@ -48,4 +48,4 @@ Contributions are welcome. Read the [contribution guidelines](CONTRIBUTING.md) f
 
 ## Footnotes
 
-Entries marked `(paid)` require payment for their main features. Entries marked `(closed source)` have no public source code.
+Entries marked `(paid)` require payment for their main features. Entries marked `(source available)` publish their source code without an open source license. Entries marked `(closed source)` have no public source code. Unmarked tools are open source.
