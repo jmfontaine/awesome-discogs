@@ -12,3 +12,894 @@
 #   reference: https://github.com/jmfontaine/awesome-discogs/issues/12
 #   note: "First commit on 2026-10-04."
 #   revisit_after: 2027-04-02
+
+- name: "[WS] Discogs (pone mod)"
+  url: https://community.mp3tag.de/t/ws-discogs-pone-mod/9226
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Latest version, 4.4joker01, dates from 2016."
+- name: "android-discogs"
+  url: https://github.com/saschpe/android-discogs
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2018-02-06."
+- name: "bandcamp-to-discogs"
+  url: https://github.com/Serhii-DV/bandcamp-to-discogs
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2025-07-27."
+- name: "COGSCORD"
+  url: https://github.com/RobertWLeslie/COGSCORD
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2020-05-09."
+- name: "cogsy"
+  url: https://github.com/cartoon-raccoon/cogsy
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2021-08-01."
+- name: "Crate"
+  url: https://apps.apple.com/us/app/crate-ai-vinyl-collection/id6758195707
+  outcome: rejected
+  reason: editorial
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "VinylBox and My Vinyl+ cover collection sync; it has 3 App Store ratings."
+- name: "CrateLog"
+  url: https://cratelog.app/
+  outcome: rejected
+  reason: too-new
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "First released on the App Store on 2026-09-01."
+  revisit_after: 2027-02-28
+- name: "DGDiscogsClient"
+  url: https://github.com/WunDaii/DGDiscogsClient
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2019-01-26."
+- name: "dgtools"
+  url: https://github.com/marcw/dgtools
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2025-09-14."
+- name: "digarr"
+  url: https://github.com/iuliandita/digarr
+  outcome: rejected
+  reason: not-discogs-specific
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Music discovery tool where Discogs is one of six taste sources."
+- name: "Disc Shelf"
+  url: https://apps.apple.com/us/app/disc-shelf/id6752208616
+  outcome: rejected
+  reason: editorial
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "My Vinyl+ and VinylBox cover the same collection and wantlist import with more features and users."
+- name: "DiscoDOS"
+  url: https://github.com/JOJ0/discodos
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2025-08-27."
+- name: "discogger"
+  url: https://github.com/ewenme/discogger
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2022-01-06."
+- name: "discogs (couwuch)"
+  url: https://github.com/couwuch/discogs
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2024-08-06."
+- name: "Discogs Cuesheet Generator"
+  url: https://greasyfork.org/en/scripts/522610-discogs-cuesheet-generator
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last code update on Greasy Fork on 2025-01-02."
+- name: "Discogs Draft Cleaner"
+  url: https://greasyfork.org/en/scripts/541248-discogs-draft-cleaner
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last code update on Greasy Fork on 2025-07-08."
+- name: "Discogs Enhancer (Chrome Web Store)"
+  url: https://chromewebstore.google.com/detail/discogs-enhancer/fljfmblajgejeicncojogelbkhbobejn
+  outcome: rejected
+  reason: duplicate
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Store listing of Discogs Enhancer, which the list links through its repository."
+- name: "Discogs everything"
+  url: https://community.mp3tag.de/t/discogs-everything/4346
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "The Mp3tag web sources date from 2007."
+- name: "Discogs Importer"
+  url: https://apps.shopify.com/discogs-importer
+  outcome: rejected
+  reason: editorial
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Disconnect covers Shopify with two-way inventory and order sync."
+- name: "Discogs Integration for WooCommerce"
+  url: https://woocommerce.com/products/discogs-integration/
+  outcome: rejected
+  reason: duplicate
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "WooCommerce Marketplace listing of Disconnect, which the list covers."
+- name: "Discogs Label Page Double Slash Redirect"
+  url: https://greasyfork.org/en/scripts/553708-discogs-label-page-double-slash-redirect
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last code update on Greasy Fork on 2025-10-26."
+- name: "Discogs Labeler"
+  url: https://torbjorn.no/discogs-labeler/
+  outcome: rejected
+  reason: editorial
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "DISCODES and Discogs QR Code Generator cover printable labels for a collection."
+- name: "Discogs Material You Design"
+  url: https://greasyfork.org/en/scripts/575166-discogs-material-you-design
+  outcome: rejected
+  reason: editorial
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Discogs Enhancer covers restyling with its dark themes, alongside its other features."
+- name: "Discogs MusicBrainz Auto-fill"
+  url: https://greasyfork.org/en/scripts/550468-discogs-musicbrainz-auto-fill
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last code update on Greasy Fork on 2025-09-23."
+- name: "Discogs Scout"
+  url: https://github.com/Purfview/Discogs-Scout
+  outcome: rejected
+  reason: out-of-scope
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "It auto-searches torrent and direct-download sites, among others, for the release on the page."
+- name: "Discogs Seller YouTube Preview"
+  url: https://greasyfork.org/en/scripts/589911-discogs-seller-youtube-preview
+  outcome: rejected
+  reason: too-new
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "First published on Greasy Fork on 2026-08-04."
+  revisit_after: 2027-01-31
+- name: "discogs-api (Dunedude84)"
+  url: https://github.com/Dunedude84/discogs-api
+  outcome: rejected
+  reason: too-new
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "First commit on 2026-07-30."
+  revisit_after: 2027-01-26
+- name: "discogs-api (webservco)"
+  url: https://github.com/webservco/discogs-api
+  outcome: rejected
+  reason: editorial
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "php-discogs-api covers the same endpoints without the legacy webservco framework."
+- name: "discogs-blocks"
+  url: https://github.com/marincarroll/discogs-blocks
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2025-11-29, so it leaves the 12-month window on 2026-11-29."
+- name: "discogs-cli (jrojas537)"
+  url: https://github.com/jrojas537/discogs-cli
+  outcome: rejected
+  reason: editorial
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "agent-discogs and discogs-cli cover agent and terminal use; this project had two days of commits."
+- name: "discogs-client"
+  url: https://github.com/lionralfs/discogs-client
+  outcome: kept
+  reason: feature-complete
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last release on 2025-11-30; it is the only maintained JavaScript client that covers the full API."
+  revisit_after: 2027-11-15
+- name: "discogs-client (boehm-s)"
+  url: https://github.com/boehm-s/discogs-rs
+  outcome: rejected
+  reason: undocumented
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Its readme says work in progress and gives no install or usage instructions."
+- name: "discogs-crate-digger"
+  url: https://github.com/domcull3n/discogs-crate-digger
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2022-03-13."
+- name: "discogs-dump-reader"
+  url: https://github.com/tomislijepcevic/discogs-dump-reader
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2019-09-03."
+- name: "discogs-dump2db"
+  url: https://github.com/tomislijepcevic/discogs-dump2db
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2019-09-03."
+- name: "discogs-enhancer (jaapspiering)"
+  url: https://github.com/jaapspiering/discogs-enhancer
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2019-02-10."
+- name: "Discogs-Genres"
+  url: https://github.com/hmartinet/Discogs-Genres
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2011-05-19."
+- name: "discogs-haskell"
+  url: https://hackage.haskell.org/package/discogs-haskell
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last release, 0.0.5.0, published in 2016."
+- name: "discogs-import"
+  url: https://github.com/bmcfee/discogs-import
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2014-02-03."
+- name: "discogs-jpa"
+  url: https://github.com/tomislijepcevic/discogs-jpa
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2019-09-06."
+- name: "discogs-label-project"
+  url: https://github.com/c6tkp6rswv-lgtm/discogs-label-project
+  outcome: rejected
+  reason: too-new
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "First commit on 2026-06-05."
+  revisit_after: 2026-12-02
+- name: "discogs-load"
+  url: https://github.com/DylanBartels/discogs-load
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2022-03-25."
+- name: "discogs-marketplace-js"
+  url: https://github.com/danbiwer/discogs-marketplace-js
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2018-05-04."
+- name: "discogs-mcp (DirtyDimmy)"
+  url: https://github.com/DirtyDimmy/discogs-mcp
+  outcome: rejected
+  reason: too-new
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "First commit on 2026-08-25."
+  revisit_after: 2027-02-21
+- name: "discogs-mcp (donnatto)"
+  url: https://github.com/donnatto/discogs-mcp
+  outcome: rejected
+  reason: too-new
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "First commit on 2026-07-22."
+  revisit_after: 2027-01-18
+- name: "discogs-mcp (HenriChabert)"
+  url: https://github.com/HenriChabert/discogs-mcp
+  outcome: rejected
+  reason: too-new
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "First commit on 2026-08-09."
+  revisit_after: 2027-02-05
+- name: "discogs-mcp (Spiegelberg)"
+  url: https://github.com/Spiegelberg/discogs-mcp
+  outcome: rejected
+  reason: too-new
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "First commit on 2026-08-09."
+  revisit_after: 2027-02-05
+- name: "discogs-mcp-server (andylobban)"
+  url: https://github.com/andylobban/discogs-mcp-server
+  outcome: rejected
+  reason: editorial
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Discogs MCP Server covers the same need; this one is a scaffold whose tools are not implemented yet."
+- name: "discogs-rest-client"
+  url: https://github.com/tomislijepcevic/discogs-rest-client
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2019-09-06."
+- name: "discogs-rs (the-haus)"
+  url: https://github.com/the-haus/discogs-rs
+  outcome: rejected
+  reason: too-new
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "First commit on 2026-11-09."
+  revisit_after: 2027-05-08
+- name: "discogs-sdk (carllosnc)"
+  url: https://github.com/carllosnc/discogs-sdk
+  outcome: rejected
+  reason: too-new
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "First commit on 2026-07-14."
+  revisit_after: 2027-01-10
+- name: "discogs-telegram"
+  url: https://github.com/badta5te/discogs-telegram
+  outcome: rejected
+  reason: too-new
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "First commit on 2026-11-06."
+  revisit_after: 2027-05-05
+- name: "Discogs-Telegram-Bot"
+  url: https://github.com/antoniocozzi/Discogs-Telegram-Bot
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2020-01-17."
+- name: "discogs-typescript"
+  url: https://github.com/thijsw/discogs-typescript
+  outcome: rejected
+  reason: too-new
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "First commit on 2026-08-07."
+  revisit_after: 2027-02-03
+- name: "discogs-wantlist-scraper-bot"
+  url: https://github.com/poloba/discogs-wantlist-scraper-bot
+  outcome: rejected
+  reason: archived
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Repository archived; last commit on 2021-10-15."
+- name: "discogs-xml2db (redapple)"
+  url: https://github.com/redapple/discogs-xml2db
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2015-05-13."
+- name: "Discogs/Ratings/Rearrange"
+  url: https://greasyfork.org/en/scripts/397864-discogs-ratings-rearrange
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last code update on Greasy Fork on 2020-03-13."
+- name: "Discogs/Release/YoutubeSearch"
+  url: https://greasyfork.org/en/scripts/397960-discogs-release-youtubesearch
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last code update on Greasy Fork on 2020-03-15."
+- name: "discogs2pg"
+  url: https://github.com/clrnd/discogs2pg
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2018-05-03."
+- name: "discogs4j (ajdons)"
+  url: https://github.com/ajdons/discogs4j
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2018-03-20."
+- name: "discogs4j (s-lindenau)"
+  url: https://github.com/s-lindenau/discogs4j
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2023-06-15."
+- name: "Discogs::Wrapper"
+  url: https://github.com/buntine/discogs
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2025-03-20."
+- name: "discogs_alert_discord"
+  url: https://github.com/8o5/discogs_alert_discord
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2022-12-20."
+- name: "discogs_api_client"
+  url: https://github.com/akashskypatel/discogs_api_client
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2025-09-21."
+- name: "discogs_client (official)"
+  url: https://github.com/discogs/discogs_client
+  outcome: rejected
+  reason: archived
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Archived after Discogs deprecated it in June 2020; python3-discogs-client continues it."
+- name: "discogs_ex"
+  url: https://hex.pm/packages/discogs_ex
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Only release, 0.0.1, published in 2017."
+- name: "Discogs_to_Woocommerce"
+  url: https://github.com/Tosha1409/Discogs_to_Woocommerce
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2021-03-30."
+- name: "discogs_wantlist_inventory_matcher"
+  url: https://github.com/OpAlliance/discogs_wantlist_inventory_matcher
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2024-12-22."
+- name: "discogsctl"
+  url: https://github.com/hastefuI/discogsctl
+  outcome: rejected
+  reason: too-new
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "First commit on 2026-10-04."
+  revisit_after: 2027-04-02
+- name: "discogsctl (22388761)"
+  url: https://github.com/22388761/discogsctl
+  outcome: rejected
+  reason: out-of-scope
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Copies the name and description of hastefuI/discogsctl and sends Windows users to a download from another site."
+- name: "discogsharp"
+  url: https://github.com/mlnrdns/discogsharp
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2022-09-18."
+- name: "discogstagger"
+  url: https://github.com/jesseward/discogstagger
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2019-01-29."
+- name: "disconnect"
+  url: https://github.com/bartve/disconnect
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2021-02-04."
+- name: "Disconnect WordPress plugin"
+  url: https://wordpress.org/plugins/integration-by-disconnect-discogs/
+  outcome: rejected
+  reason: duplicate
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "WooCommerce connector of Disconnect, which the list covers."
+- name: "Diskogs"
+  url: https://github.com/riberr/Diskogs
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2022-02-03."
+- name: "DJGenreSelector"
+  url: https://github.com/vladare/DJGenreSelector
+  outcome: rejected
+  reason: not-discogs-specific
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Picard plugin that combines Bandcamp and Discogs genres."
+- name: "Fix Discogs Links"
+  url: https://greasyfork.org/en/scripts/479483-fix-discogs-links
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last code update on Greasy Fork on 2023-11-11."
+- name: "foo_discogs"
+  url: https://bitbucket.org/zoomorph/foo_discogs
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2020-04-11."
+- name: "go-discogs (irlndts)"
+  url: https://github.com/irlndts/go-discogs
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2023-04-12."
+- name: "go-discogs (ninnemana)"
+  url: https://github.com/ninnemana/go-discogs
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2020-10-23."
+- name: "go-discogs (sblinch)"
+  url: https://github.com/sblinch/go-discogs
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2024-10-16."
+- name: "graphbrainz-extension-discogs"
+  url: https://github.com/exogen/graphbrainz-extension-discogs
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2018-08-04."
+- name: "groovectl"
+  url: https://github.com/ShiTuoCheng/groovectl
+  outcome: rejected
+  reason: too-new
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "First commit on 2026-09-19."
+  revisit_after: 2027-03-18
+- name: "Groovv"
+  url: https://www.groovv.app/
+  outcome: rejected
+  reason: editorial
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "My Vinyl+ and VinylBox cover barcode scanning and Discogs sync with far more users; it is free only up to 100 records."
+- name: "ha-vinyl-collection"
+  url: https://github.com/snowmonkeylab/ha-vinyl-collection
+  outcome: rejected
+  reason: too-new
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "First commit on 2026-06-22."
+  revisit_after: 2026-12-19
+- name: "ha-vinyl-player"
+  url: https://github.com/niku85/ha-vinyl-player
+  outcome: rejected
+  reason: too-new
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "First commit on 2026-11-02."
+  revisit_after: 2027-05-01
+- name: "Home Assistant Discogs integration"
+  url: https://www.home-assistant.io/integrations/discogs/
+  outcome: rejected
+  reason: editorial
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Discogs Sync expands on it with collection value, wantlist, and random record sensors."
+- name: "homeassistant-discogs-enhanced"
+  url: https://github.com/andreasc1/homeassistant-discogs-enhanced
+  outcome: rejected
+  reason: editorial
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Discogs Sync covers the same collection value sensors, plus wantlist and random record sensors."
+- name: "homeassistant-discogs-enhanced (frenck)"
+  url: https://github.com/frenck/homeassistant-discogs-enhanced
+  outcome: rejected
+  reason: editorial
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Fork of andreasc1/homeassistant-discogs-enhanced; Discogs Sync covers the same sensors and more."
+- name: "javacogs"
+  url: https://github.com/hypothermic/javacogs
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2019-02-24."
+- name: "jdiscogs"
+  url: https://github.com/jruaux/jdiscogs
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2020-10-30."
+- name: "mcp-discogs (pipeworx)"
+  url: https://github.com/pipeworx-io/mcp-discogs
+  outcome: rejected
+  reason: editorial
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Discogs MCP Server covers catalog search plus collection, wantlist, and marketplace tools."
+- name: "muffon-api"
+  url: https://github.com/staniel359/muffon-api
+  outcome: rejected
+  reason: not-discogs-specific
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Music API that aggregates Discogs among many other sources."
+- name: "music-utils"
+  url: https://github.com/hansogj/music-utils
+  outcome: rejected
+  reason: out-of-scope
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Scripts for its author's own FLAC and MP3 collection."
+- name: "Mutiny"
+  url: https://github.com/kristopolous/Mutiny
+  outcome: rejected
+  reason: not-discogs-specific
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Music scraper and cataloger that uses Discogs alongside Bandcamp and other sources."
+- name: "n8n-nodes-discogs"
+  url: https://github.com/wardormeur/n8n-nodes-discogs
+  outcome: rejected
+  reason: too-new
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "First commit on 2026-10-25."
+  revisit_after: 2027-04-23
+- name: "NWCD search link on Discogs"
+  url: https://greasyfork.org/en/scripts/26230-nwcd-search-link-on-discogs
+  outcome: rejected
+  reason: out-of-scope
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Adds search links to a private torrent tracker."
+- name: "php-discogs-api (ampache)"
+  url: https://github.com/ampache/php-discogs-api
+  outcome: rejected
+  reason: editorial
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "php-discogs-api covers more of the API; this is a small query library extracted from Ampache."
+- name: "php-discogs-api (kiyomasanaki)"
+  url: https://github.com/kiyomasanaki/php-discogs-api
+  outcome: rejected
+  reason: editorial
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "php-discogs-api is the maintained successor of the same ricbra code base."
+- name: "php-discogs-api (ricbra)"
+  url: https://github.com/ricbra/php-discogs-api
+  outcome: rejected
+  reason: archived
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Archived and marked abandoned in favor of calliostro/php-discogs-api."
+- name: "picard-discogs-enrichment"
+  url: https://github.com/herculepirate/picard-discogs-enrichment
+  outcome: rejected
+  reason: too-new
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "First commit on 2026-10-14."
+  revisit_after: 2027-04-12
+- name: "Plastic"
+  url: https://myplastic.app/
+  outcome: rejected
+  reason: editorial
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Record Scanner covers cover-photo identification with far more users, 2,130 App Store ratings against 8."
+- name: "puddletag"
+  url: https://github.com/puddletag/puddletag
+  outcome: rejected
+  reason: not-discogs-specific
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "General tag editor where Discogs is one built-in tag source among several."
+- name: "React-Discogs_MusicApp"
+  url: https://github.com/FIL1994/React-Discogs_MusicApp
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2017-07-16."
+- name: "react-native-discogs-auth"
+  url: https://github.com/leudanm/react-native-discogs-auth
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2022-07-31."
+- name: "RED search link on discogs"
+  url: https://greasyfork.org/en/scripts/25787-red-search-link-on-discogs
+  outcome: rejected
+  reason: out-of-scope
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Adds search links to a private torrent tracker."
+- name: "release:txt"
+  url: https://greasyfork.org/en/scripts/41091-release-txt
+  outcome: rejected
+  reason: archived
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Its author marks it archived and says it no longer works."
+- name: "release:txt REMASTERED"
+  url: https://greasyfork.org/en/scripts/541240-release-txt-remastered-bandcamp-discogs-soundcloud
+  outcome: rejected
+  reason: not-discogs-specific
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Extracts text tracklists from Bandcamp and SoundCloud as well as Discogs."
+- name: "scrobblecue"
+  url: https://github.com/m-bilic/scrobblecue
+  outcome: rejected
+  reason: too-new
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "First commit on 2026-10-28."
+  revisit_after: 2027-04-26
+- name: "Shelfify"
+  url: https://apps.apple.com/us/app/shelfify-vinyl-cd-organizer/id6759003070
+  outcome: rejected
+  reason: editorial
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "VinylBox and My Vinyl+ cover collection sync; it has no App Store ratings yet."
+- name: "silversaucer"
+  url: https://github.com/prcutler/silversaucer
+  outcome: rejected
+  reason: out-of-scope
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Toy web app built around its author's own record collection."
+- name: "SongKong"
+  url: https://www.jthink.net/songkong/
+  outcome: rejected
+  reason: not-discogs-specific
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "General tagger that searches Discogs alongside MusicBrainz."
+- name: "SwiftDiscogs"
+  url: https://github.com/jrtibbetts/SwiftDiscogs
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2022-07-25."
+- name: "typescript-discogs-client"
+  url: https://github.com/nktknshn/typescript-discogs-client
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2020-07-23."
+- name: "Vinyl Record App"
+  url: https://apps.apple.com/us/app/vinyl-record-app/id1114331735
+  outcome: rejected
+  reason: not-discogs-specific
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Its App Store description does not mention Discogs."
+- name: "vinyl-scrobbler"
+  url: https://github.com/russmckendrick/vinyl-scrobbler
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2025-02-01."
+- name: "vinyl-shelf-finder"
+  url: https://github.com/valentingalea/vinyl-shelf-finder
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2018-08-17."
+- name: "VinylAI"
+  url: https://vinylai.app/
+  outcome: rejected
+  reason: not-discogs-specific
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Vinyl guide and marketplace where Discogs pricing is one feature among many."
+- name: "Vinylist"
+  url: https://vinylist.studio/en/
+  outcome: rejected
+  reason: too-new
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Not released yet: its site announces the app as coming soon to the App Store."
+  revisit_after: 2027-05-14
+- name: "VinylMatch"
+  url: https://github.com/luisleineweber/VinylMatch
+  outcome: rejected
+  reason: not-discogs-specific
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Turns Spotify playlists into links to record retailers, with Discogs as one of the lookups."
+- name: "Vinylogger"
+  url: https://github.com/Shpeitim/Vinylogger
+  outcome: rejected
+  reason: too-new
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "First commit on 2026-10-17."
+  revisit_after: 2027-04-15
+- name: "vinylscrobbler"
+  url: https://github.com/tjol/vinylscrobbler
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last commit on 2016-03-20."
+- name: "WWW::Discogs"
+  url: https://metacpan.org/dist/WWW-Discogs
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last release, 0.13, published in 2012."
+- name: "从Discogs添加豆瓣条目"
+  url: https://greasyfork.org/en/scripts/457847-%E4%BB%8Ediscogs%E6%B7%BB%E5%8A%A0%E8%B1%86%E7%93%A3%E6%9D%A1%E7%9B%AE
+  outcome: rejected
+  reason: unmaintained
+  date: 2026-11-15
+  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
+  note: "Last code update on Greasy Fork on 2024-12-21."
