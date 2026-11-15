@@ -63,8 +63,10 @@ class GitHub:
             if error.code in expected:
                 return error.code, None, ""
             raise GitHubError(f"GET {url} failed with HTTP {error.code}") from error
-        except urllib.error.URLError as error:
-            raise GitHubError(f"GET {url} failed: {error.reason}") from error
+        except (urllib.error.URLError, TimeoutError, ValueError) as error:
+            # URLError covers connection failures; a read can still time out, and
+            # a truncated body fails to parse as JSON (a ValueError).
+            raise GitHubError(f"GET {url} failed: {error}") from error
 
     def status(self, owner: str, repo: str) -> RepoStatus | None:
         """Return the repository's status, or None when it doesn't exist."""

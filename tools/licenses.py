@@ -20,7 +20,7 @@ def osi_approved() -> frozenset[str]:
     try:
         with urllib.request.urlopen(request, timeout=TIMEOUT_SECONDS) as response:
             licenses = json.load(response)["licenses"]
-    except (urllib.error.URLError, ValueError, KeyError) as error:
+    except (urllib.error.URLError, TimeoutError, ValueError, KeyError) as error:
         raise LicenseListError(f"GET {SPDX_LICENSES} failed: {error}") from error
     return frozenset(
         license["licenseId"] for license in licenses if license.get("isOsiApproved")
