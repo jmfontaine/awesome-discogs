@@ -53,6 +53,7 @@ Add each entry to the section that best describes its main purpose. The API Clie
 - Entries that stop meeting the criteria are removed.
 - When you spot one, open a "Report a problem" issue. Or open a pull request that deletes the line, adds a `removed` record to `decisions.yml`, and is titled `fix: remove <Name> (<reason code>)`.
 - Exception: a feature-complete project that still works with Discogs can stay without recent activity; see [Decisions](#decisions).
+- Every Monday, a health run checks every link, and checks every listed GitHub repository against the criteria and its entry's source marker against the repository's license. It keeps its findings in one issue titled "List health report" and closes that issue once everything passes.
 
 ## Decisions
 

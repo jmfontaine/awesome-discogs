@@ -12,6 +12,10 @@ lint:
 links:
     uvx --from lychee-bin lychee --config lychee.toml README.md CONTRIBUTING.md
 
+# Report listed GitHub projects that no longer meet the inclusion criteria
+audit:
+    GITHUB_TOKEN="${GITHUB_TOKEN:-$(gh auth token)}" uv run python -m tools audit
+
 # Format the checking tools
 format:
     uv run ruff format

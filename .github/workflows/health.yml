@@ -1,0 +1,78 @@
+name: Health
+
+# Pull requests check links and new entries in the CI workflow. This weekly run checks the whole list again, catching
+# links that die and projects that stop meeting the inclusion criteria between changes. It keeps its findings in one
+# issue, which it updates while problems remain and closes once everything passes.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Two overlapping runs would both find no open report and each create one.
+concurrency:
+  group: health
+
+jobs:
+  report:
+    name: Report
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - id: lychee
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: --config lychee.toml README.md CONTRIBUTING.md
+          fail: false
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+      - id: audit
+        name: Audit the listed projects
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        # Exit status 1 with a report means findings, 0 means none; anything else means the audit could not run.
+        run: |
+          set +e
+          uv run --locked python -m tools audit --report audit.md
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+      - name: Fail when a check could not run
+        # lychee exits 2 for dead links, 1 or 3 when it fails. An audit that exits 1 without writing its report
+        # crashed. Failing here skips publishing, so a check that could not run never closes the report.
+        if: >-
+          (steps.lychee.outputs.exit_code != '0' && steps.lychee.outputs.exit_code != '2')
+          || (steps.audit.outputs.exit_code != '0' && steps.audit.outputs.exit_code != '1')
+          || (steps.audit.outputs.exit_code == '1' && hashFiles('audit.md') == '')
+        run: exit 1
+      - name: Publish the report
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          LYCHEE_EXIT: ${{ steps.lychee.outputs.exit_code }}
+          AUDIT_EXIT: ${{ steps.audit.outputs.exit_code }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title="List health report"
+          : > report.md
+          if [ "$LYCHEE_EXIT" = 2 ]; then
+            { echo "## Dead links"; echo; cat lychee/out.md; echo; } >> report.md
+          fi
+          if [ "$AUDIT_EXIT" = 1 ]; then
+            { echo "## Entries to review"; echo; cat audit.md; echo; } >> report.md
+          fi
+          number=$(gh issue list --state open --limit 200 --json number,title \
+            --jq "map(select(.title == \"$title\")) | first | .number // empty")
+          if [ -s report.md ]; then
+            echo "Updated by $RUN_URL" >> report.md
+            if [ -n "$number" ]; then
+              gh issue edit "$number" --body-file report.md
+            else
+              gh issue create --title "$title" --label triage --body-file report.md
+            fi
+          elif [ -n "$number" ]; then
+            gh issue close "$number" --comment "Every check passes as of $RUN_URL."
+          fi
