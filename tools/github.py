@@ -1,5 +1,6 @@
 """Read what the inclusion criteria need to know about a GitHub repository."""
 
+import http.client
 import json
 import re
 import urllib.error
@@ -63,9 +64,9 @@ class GitHub:
             if error.code in expected:
                 return error.code, None, ""
             raise GitHubError(f"GET {url} failed with HTTP {error.code}") from error
-        except (urllib.error.URLError, TimeoutError, ValueError) as error:
-            # URLError covers connection failures; a read can still time out, and
-            # a truncated body fails to parse as JSON (a ValueError).
+        except (OSError, http.client.HTTPException, ValueError) as error:
+            # OSError covers URLError, timeouts and dropped connections,
+            # HTTPException a truncated response, ValueError a body that isn't JSON.
             raise GitHubError(f"GET {url} failed: {error}") from error
 
     def status(self, owner: str, repo: str) -> RepoStatus | None:
