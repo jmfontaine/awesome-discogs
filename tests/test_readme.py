@@ -16,6 +16,8 @@ def test_valid_list_has_no_problems():
         "\n"
         "- [Alpha](https://example.com/alpha) - Export a collection (paid).\n"
         "- [beta](https://example.com/beta) - Sell records (paid, closed source).\n"
+        "- [delta](https://example.com/delta) - Price lists (paid, source available).\n"
+        "- [Gamma](https://example.com/gamma) - Tag files (source available).\n"
         "\n"
         "## API Clients\n"
         "\n"
@@ -34,7 +36,14 @@ def test_valid_list_has_no_problems():
         "https://example.com/alpha",
         "Export a collection (paid).",
     )
-    assert (entries[2].section, entries[2].subsection) == ("API Clients", "Python")
+    assert [entry.source for entry in entries] == [
+        None,
+        "closed source",
+        "source available",
+        "source available",
+        None,
+    ]
+    assert (entries[4].section, entries[4].subsection) == ("API Clients", "Python")
 
 
 @pytest.mark.parametrize(

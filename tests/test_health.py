@@ -14,6 +14,7 @@ def status(**changes) -> RepoStatus:
         "first_commit": date(2020, 1, 1),
         "last_activity": TODAY - timedelta(days=10),
         "has_readme": True,
+        "license": "MIT",
     }
     return RepoStatus(**{**fields, **changes})
 

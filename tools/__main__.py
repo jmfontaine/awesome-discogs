@@ -4,12 +4,15 @@ import argparse
 import os
 import subprocess
 import sys
+from collections.abc import Callable
 from datetime import UTC, date, datetime
+from functools import cache
 from pathlib import Path
 
 from tools.audit import audit, render
 from tools.decisions import Decision, cross_check, load
 from tools.github import GitHub, GitHubError
+from tools.licenses import LicenseListError, osi_approved
 from tools.pr import check_pr
 from tools.problems import Problem, emit
 from tools.readme import Entry, parse
@@ -94,7 +97,11 @@ def _audit(
     return 1
 
 
-def main(argv: list[str] | None = None, github: GitHub | None = None) -> int:
+def main(
+    argv: list[str] | None = None,
+    github: GitHub | None = None,
+    osi_licenses: Callable[[], frozenset[str]] | None = None,
+) -> int:
     args = _parser().parse_args(argv)
     annotations = os.environ.get("GITHUB_ACTIONS") == "true"
     readme_path = str(args.readme)
@@ -135,11 +142,12 @@ def main(argv: list[str] | None = None, github: GitHub | None = None) -> int:
                 base_entries,
                 decisions,
                 github or _github(),
+                osi_licenses=osi_licenses or cache(osi_approved),
                 author_association=args.author_association,
                 today=args.today,
                 readme_path=readme_path,
             )
-        except GitHubError as error:
+        except (GitHubError, LicenseListError) as error:
             return _fail(str(error), annotations=annotations)
 
     emit(found, annotations=annotations)

@@ -15,11 +15,19 @@ from tools.urls import normalize
 ENTRY = re.compile(
     r"^- \[(?P<name>[^\]]+)\]\((?P<url>[^)\s]+)\) - (?P<description>.+)$"
 )
+MARKERS = (
+    "paid",
+    "source available",
+    "closed source",
+    "paid, source available",
+    "paid, closed source",
+)
 DESCRIPTION = re.compile(
     r"^(?P<text>.+?)"
-    r"(?: \((?P<markers>paid|closed source|paid, closed source)\))?\.$"
+    r"(?: \((?P<markers>" + "|".join(re.escape(m) for m in MARKERS) + r")\))?\.$"
 )
-MARKER_TEXT = re.compile(r"\(paid|closed source", re.IGNORECASE)
+MARKER_TEXT = re.compile(r"\(paid|source available|closed source", re.IGNORECASE)
+SOURCE_MARKERS = ("source available", "closed source")
 
 # The words CONTRIBUTING.md asks entries to leave out.
 MARKETING_WORDS = (
@@ -72,6 +80,13 @@ class Entry:
     name: str
     url: str
     description: str
+
+    @property
+    def source(self) -> str | None:
+        """Return the entry's source marker: source available or closed source."""
+        described = DESCRIPTION.match(self.description)
+        markers = (described["markers"] or "") if described else ""
+        return next((m for m in SOURCE_MARKERS if m in markers), None)
 
 
 @dataclass
@@ -166,7 +181,8 @@ def parse(text: str, path: str = "README.md") -> tuple[list[Entry], list[Problem
             problem(
                 number,
                 "markers go before the final period: "
-                "(paid), (closed source) or (paid, closed source)",
+                + ", ".join(f"({m})" for m in MARKERS[:-1])
+                + f" or ({MARKERS[-1]})",
             )
         elif described is None:
             problem(number, "end the description with a period")
