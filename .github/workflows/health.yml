@@ -12,6 +12,10 @@ on:
 permissions:
   contents: read
 
+# Two overlapping runs would both find no open report and each create one.
+concurrency:
+  group: health
+
 jobs:
   report:
     name: Report
@@ -31,15 +35,18 @@ jobs:
         name: Audit the listed projects
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        # Exit status 1 means findings, 2 means the audit could not run.
+        # Exit status 1 with a report means findings, 0 means none; anything else means the audit could not run.
         run: |
           set +e
           uv run --locked python -m tools audit --report audit.md
           echo "exit_code=$?" >> "$GITHUB_OUTPUT"
       - name: Fail when a check could not run
-        # lychee exits 2 for dead links, 1 or 3 when it fails. Failing here skips publishing, so a check that
-        # could not run never closes the report.
-        if: (steps.lychee.outputs.exit_code != '0' && steps.lychee.outputs.exit_code != '2') || steps.audit.outputs.exit_code == '2'
+        # lychee exits 2 for dead links, 1 or 3 when it fails. An audit that exits 1 without writing its report
+        # crashed. Failing here skips publishing, so a check that could not run never closes the report.
+        if: >-
+          (steps.lychee.outputs.exit_code != '0' && steps.lychee.outputs.exit_code != '2')
+          || (steps.audit.outputs.exit_code != '0' && steps.audit.outputs.exit_code != '1')
+          || (steps.audit.outputs.exit_code == '1' && hashFiles('audit.md') == '')
         run: exit 1
       - name: Publish the report
         env:
