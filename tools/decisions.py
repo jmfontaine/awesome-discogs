@@ -17,7 +17,6 @@ REASONS: dict[str, frozenset[str]] = {
     "archived": frozenset({"rejected", "removed"}),
     "gone": frozenset({"removed"}),
     "undocumented": frozenset({"rejected", "removed"}),
-    "terms-of-use": frozenset({"rejected", "removed"}),
     "too-new": frozenset({"rejected"}),
     "duplicate": frozenset({"rejected", "removed"}),
     "out-of-scope": frozenset({"rejected", "removed"}),
