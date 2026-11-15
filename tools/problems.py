@@ -22,7 +22,13 @@ def emit(problems: Iterable[Problem], *, annotations: bool) -> None:
             location = f"file={problem.path}"
             if problem.line is not None:
                 location += f",line={problem.line}"
-            print(f"::{problem.level} {location}::{problem.message}")
+            # Workflow commands end at a newline, so encode it as GitHub expects.
+            message = (
+                problem.message.replace("%", "%25")
+                .replace("\r", "%0D")
+                .replace("\n", "%0A")
+            )
+            print(f"::{problem.level} {location}::{message}")
         elif problem.line is not None:
             print(f"{problem.path}:{problem.line}: {problem.message}")
         else:
