@@ -27,8 +27,11 @@ Closes #N
 - [ ] I read the [contribution guidelines](https://github.com/jmfontaine/awesome-discogs/blob/main/CONTRIBUTING.md).
 - [ ] The tool uses the Discogs API, the data dumps, or the Discogs site as a core part of what it does.
 - [ ] It has a commit or a release in the last 12 months, and its repository is not archived.
+- [ ] Its first commit is at least 180 days old, or, without a public repository, its first public release is.
+- [ ] It is not recorded as rejected or removed in `decisions.yml`, or the reason no longer holds and this pull request deletes the record.
 - [ ] Its readme or website explains how to install and use it.
 - [ ] It complies with the Discogs API Terms of Use.
 - [ ] The entry is in the right section, in alphabetical order.
 - [ ] The description starts with a capital letter, ends with a period, and doesn't repeat the name.
-- [ ] Paid or closed-source tools carry the `(paid)` or `(closed source)` marker.
+- [ ] Paid, source-available, and closed-source tools carry the `(paid)`, `(source available)`, or `(closed source)` marker.
+- [ ] I checked the two entries above and below mine.

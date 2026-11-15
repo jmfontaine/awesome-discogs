@@ -1,0 +1,14 @@
+# Curation decisions the list itself doesn't show: suggestions that were
+# rejected, entries that were removed, and quiet projects kept on purpose.
+# CONTRIBUTING.md#decisions explains each field and reason code.
+# Add one record per project, with name and note in double quotes,
+# for example:
+#
+# - name: "Example Tool"
+#   url: https://github.com/example/example-tool
+#   outcome: rejected
+#   reason: too-new
+#   date: 2026-11-20
+#   reference: https://github.com/jmfontaine/awesome-discogs/issues/12
+#   note: "First commit on 2026-10-04."
+#   revisit_after: 2027-04-02
