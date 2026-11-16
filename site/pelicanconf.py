@@ -40,32 +40,50 @@ class Section:
     groups: list[Group] = field(default_factory=list)
 
 
-def _slug(title: str) -> str:
-    """Return the anchor GitHub gives the heading, so README links keep working."""
-    return re.sub(r"[^\w\- ]", "", title.lower()).replace(" ", "-")
+def _slugger():
+    """Return a function that gives each heading the anchor GitHub gives it.
+
+    GitHub suffixes repeated anchors with -1, -2, and so on, so README links keep
+    working on the website.
+    """
+    seen: dict[str, int] = {}
+
+    def slug(title: str) -> str:
+        base = re.sub(r"[^\w\- ]", "", title.lower()).replace(" ", "-")
+        count = seen.get(base, 0)
+        seen[base] = count + 1
+        return f"{base}-{count}" if count else base
+
+    return slug
 
 
 def _summary(readme: str) -> str:
     """Return the README's opening quote as HTML, with its links kept."""
-    quote = next(line for line in readme.splitlines() if line.startswith("> "))
-    text = escape(quote.removeprefix("> "), quote=False)
+    quote = next((line for line in readme.splitlines() if line.startswith("> ")), None)
+    if quote is None:
+        raise SystemExit("README.md needs a `> ` quote that describes Discogs")
+    text = escape(quote.removeprefix("> "))
     return LINK.sub(lambda m: f'<a href="{m["url"]}">{m["text"]}</a>', text)
 
 
 def _sections(readme: str) -> list[Section]:
     entries, problems = parse(readme)
     if problems:
-        details = "\n".join(f"  line {p.line}: {p.message}" for p in problems)
+        details = "\n".join(
+            f"  line {p.line}: {p.message}" if p.line else f"  {p.message}"
+            for p in problems
+        )
         raise SystemExit(f"README.md has problems, run `just lint`:\n{details}")
 
+    slug = _slugger()
     sections: list[Section] = []
     for entry in entries:
         if not sections or sections[-1].title != entry.section:
-            sections.append(Section(entry.section, _slug(entry.section)))
+            sections.append(Section(entry.section, slug(entry.section)))
         section = sections[-1]
         if not section.groups or section.groups[-1].title != entry.subsection:
-            slug = _slug(entry.subsection) if entry.subsection else section.slug
-            section.groups.append(Group(entry.subsection, slug))
+            group_slug = slug(entry.subsection) if entry.subsection else section.slug
+            section.groups.append(Group(entry.subsection, group_slug))
         described = DESCRIPTION.match(entry.description)
         markers = described["markers"] if described else None
         section.groups[-1].tools.append(

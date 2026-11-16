@@ -27,10 +27,14 @@ qa: lint
     uv run ruff check
     uv run pytest
 
+# Tailwind CSS standalone binary that pytailwindcss downloads on first use
+export TAILWINDCSS_VERSION := "v4.3.5"
+
 # Build the website from the list into site/output
 site:
     uv run --group site pelican --settings site/pelicanconf.py
+    uv run --group site tailwindcss --input site/theme/tailwind.css --output site/output/theme/style.css --minify
 
-# Build the website and serve it at http://localhost:8000, rebuilding on changes
+# Build the website and serve it at http://localhost:8000, rebuilding when the list or the site changes
 serve:
-    uv run --group site pelican --settings site/pelicanconf.py --autoreload --listen
+    uv run --group site watchfiles "sh -c 'just site && exec pelican --settings site/pelicanconf.py --listen'" README.md tools/readme.py site/pelicanconf.py site/theme
