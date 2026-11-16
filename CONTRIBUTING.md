@@ -11,7 +11,7 @@ An entry must be:
 - **Established.** Its first commit is at least 180 days old; for a project without a public repository, its first public release is. Younger projects can be suggested again once they reach that age.
 - **Documented.** Its readme or website explains how to install and use it.
 
-Paid, source-available and closed-source tools are accepted when they meet the same criteria. Flag them with the markers below. Tools that scrape the Discogs site are accepted too, although the Discogs [Terms of Service](https://support.discogs.com/hc/en-us/articles/360009334333-Terms-of-Service) forbid it: their description says so, because they can stop working and Discogs can act against the accounts that use them.
+Paid, source-available and closed-source tools are accepted when they meet the same criteria. Flag them with the markers below. Tools that scrape the Discogs site are accepted too, although the Discogs [Terms of Service](https://support.discogs.com/hc/en-us/articles/360009334333-Terms-of-Service) and [API Terms of Use](https://support.discogs.com/hc/en-us/articles/360009334593-API-Terms-of-Use) restrict it: their description says so, because they can stop working and Discogs can act against the accounts that use them.
 
 ## What Does Not Qualify
 
