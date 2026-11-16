@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ SITENAME }}</title>
+  <meta name="description" content="{{ SUMMARY|striptags }}">
+  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/style.css">
+</head>
+<body>
+  <header>
+    <h1>{{ SITENAME }}</h1>
+    <p class="summary">{{ SUMMARY|safe }}</p>
+    <p class="meta">{{ TOOL_COUNT }} tools and resources · <a href="{{ REPOSITORY }}">Source on GitHub</a> · <a href="{{ REPOSITORY }}/blob/main/CONTRIBUTING.md">Contribute</a></p>
+    <nav aria-label="Sections">
+      <ul>
+        {% for section in SECTIONS %}
+        <li><a href="#{{ section.slug }}">{{ section.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {% for section in SECTIONS %}
+    <section id="{{ section.slug }}">
+      <h2><a href="#{{ section.slug }}">{{ section.title }}</a></h2>
+      {% for group in section.groups %}
+      {% if group.title %}
+      <h3 id="{{ group.slug }}"><a href="#{{ group.slug }}">{{ group.title }}</a></h3>
+      {% endif %}
+      <ul class="tools">
+        {% for tool in group.tools %}
+        <li>
+          <a class="name" href="{{ tool.url }}">{{ tool.name }}</a>
+          {% for marker in tool.markers %}<span class="marker {{ marker|replace(' ', '-') }}">{{ marker }}</span>{% endfor %}
+          <p>{{ tool.description }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endfor %}
+    </section>
+    {% endfor %}
+  </main>
+
+  <footer>
+    <p><span class="marker paid">paid</span> requires payment for its main features. <span class="marker source-available">source available</span> publishes its source code without an open source license. <span class="marker closed-source">closed source</span> has no public source code. Tools without a marker are open source.</p>
+    <p>Built from the list on <a href="{{ REPOSITORY }}">GitHub</a>.</p>
+  </footer>
+</body>
+</html>

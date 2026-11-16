@@ -26,3 +26,11 @@ qa: lint
     uv run ruff format --check
     uv run ruff check
     uv run pytest
+
+# Build the website from the list into site/output
+site:
+    uv run --group site pelican --settings site/pelicanconf.py
+
+# Build the website and serve it at http://localhost:8000, rebuilding on changes
+serve:
+    uv run --group site pelican --settings site/pelicanconf.py --autoreload --listen
