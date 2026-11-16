@@ -30,7 +30,7 @@ Closes #N
 - [ ] Its first commit is at least 180 days old, or, without a public repository, its first public release is.
 - [ ] It is not recorded as rejected or removed in `decisions.yml`, or the reason no longer holds and this pull request deletes the record.
 - [ ] Its readme or website explains how to install and use it.
-- [ ] It complies with the Discogs API Terms of Use.
+- [ ] If it scrapes the Discogs site, its description says so.
 - [ ] The entry is in the right section, in alphabetical order.
 - [ ] The description starts with a capital letter, ends with a period, and doesn't repeat the name.
 - [ ] Paid, source-available, and closed-source tools carry the `(paid)`, `(source available)`, or `(closed source)` marker.

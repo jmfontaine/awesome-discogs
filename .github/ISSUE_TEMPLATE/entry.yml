@@ -35,8 +35,6 @@ body:
           required: true
         - label: Its readme or website explains how to install and use it.
           required: true
-        - label: It complies with the Discogs API Terms of Use.
-          required: true
         - label: Its first commit is at least 180 days old, or, without a public repository, its first public release is.
           required: true
         - label: It is not recorded as rejected or removed in decisions.yml, or the reason no longer holds.

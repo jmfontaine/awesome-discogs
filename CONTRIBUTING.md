@@ -10,9 +10,8 @@ An entry must be:
 - **Maintained.** It has a commit or a release in the last 12 months, and its repository is not archived. Deprecated projects are not accepted.
 - **Established.** Its first commit is at least 180 days old; for a project without a public repository, its first public release is. Younger projects can be suggested again once they reach that age.
 - **Documented.** Its readme or website explains how to install and use it.
-- **Compliant with the [API Terms of Use](https://support.discogs.com/hc/en-us/articles/360009334593-API-Terms-of-Use).** Tools that work by scraping the site against those terms are not accepted.
 
-Paid, source-available and closed-source tools are accepted when they meet the same criteria. Flag them with the markers below.
+Paid, source-available and closed-source tools are accepted when they meet the same criteria. Flag them with the markers below. Tools that scrape the Discogs site are accepted too, although the Discogs [Terms of Service](https://support.discogs.com/hc/en-us/articles/360009334333-Terms-of-Service) and [API Terms of Use](https://support.discogs.com/hc/en-us/articles/360009334593-API-Terms-of-Use) restrict it: their description says so, because they can stop working and Discogs can act against the accounts that use them.
 
 ## What Does Not Qualify
 
@@ -20,6 +19,8 @@ Paid, source-available and closed-source tools are accepted when they meet the s
 - Forks that add nothing substantial to a listed project.
 - Tutorials, blog posts, example code, course projects, and one-off scripts.
 - Sites and bots that only serve their author's own collection or account.
+- Tools that search for or link to unauthorized copies of music, such as torrent or direct-download sites.
+- Malware, and software that poses as another project.
 
 ## Entry Format
 
@@ -33,6 +34,7 @@ Paid, source-available and closed-source tools are accepted when they meet the s
 - Start the description with a capital letter and end it with a period.
 - Describe what the tool does in one sentence, without repeating the project's name.
 - Leave out marketing words: best, powerful, amazing, awesome, ultimate, seamless, effortless, blazing, cutting-edge, state-of-the-art, world-class, revolutionary. Unmarked entries are open source, so don't say it; the markers flag the rest.
+- When the tool collects data by scraping the Discogs site instead of using the API or the data dumps, say so in the description.
 - Add `(paid)` before the final period when the main features require payment. Add `(source available)` when the source code is public but not under a license approved by the [Open Source Initiative](https://opensource.org/licenses), including code published without a license, and `(closed source)` when the source code is not public. Combine them as `(paid, source available)` or `(paid, closed source)`.
 - Use an `https` link.
 - Keep entries in alphabetical order within their section.
@@ -87,7 +89,6 @@ The maintainers paste the Reply when closing; `<…>` marks the parts to fill in
 |`archived`|rejected, removed|Repository archived, or project deprecated.|"The repository is archived (or the project deprecated), so it can't be listed."|
 |`gone`|removed|The repository and website no longer exist.|"The project's repository and website no longer exist."|
 |`undocumented`|rejected, removed|No install and usage instructions.|"Its readme or website needs to explain how to install and use it. Suggest it again once it does."|
-|`terms-of-use`|rejected, removed|Works against the API Terms of Use, such as by scraping.|"It \<does X\>, which the Discogs API Terms of Use don't allow."|
 |`too-new`|rejected|First commit less than 180 days old.|"The list accepts projects whose first commit is at least 180 days old. Suggest it again after \<revisit_after\>."|
 |`duplicate`|rejected, removed|Already listed, or a fork adding nothing substantial.|"It's already listed as \<entry\>." or "It's a fork of \<listed project\> without substantial additions."|
 |`out-of-scope`|rejected, removed|Matches What Does Not Qualify.|"\<Kind of project\> is outside what the list covers; see What Does Not Qualify."|
