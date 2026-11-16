@@ -72,7 +72,7 @@
 
 - [Discogs Data Processor CLI](https://github.com/ofurkancoban/DiscogsCLI) - Downloads the dumps, extracts them, and converts them to CSV (source available).
 - [discogs-xml2db](https://github.com/philipmat/discogs-xml2db) - Converts the dumps to CSV, then imports them into MySQL, PostgreSQL, or SQLite through separate scripts.
-- [discogskit](https://github.com/jmfontaine/discogskit) - Converts the dumps to Parquet or JSONL, or loads them into SQLite or PostgreSQL in one command, three times faster than discogs-xml2db.
+- [discogskit](https://github.com/jmfontaine/discogskit) - Converts the dumps to Parquet or JSONL, or loads them into SQLite or PostgreSQL in one command, and loads PostgreSQL three times faster than discogs-xml2db.
 - [Discogsography](https://github.com/SimplicityGuy/discogsography) - Loads the dumps into Neo4j and PostgreSQL to explore releases as a graph (source available).
 
 ## Command-Line Tools
