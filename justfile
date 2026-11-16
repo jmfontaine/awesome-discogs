@@ -37,4 +37,4 @@ site:
 
 # Build the website and serve it at http://localhost:8000, rebuilding when the list or the site changes
 serve:
-    uv run --group site watchfiles "sh -c 'just site && exec pelican --settings site/pelicanconf.py --listen'" README.md tools/readme.py site/pelicanconf.py site/theme
+    uv run --group site watchfiles "sh -c 'trap \"exit 130\" INT; just site && exec pelican --settings site/pelicanconf.py --listen'" README.md tools/readme.py site/pelicanconf.py site/theme
