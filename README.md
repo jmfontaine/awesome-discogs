@@ -56,8 +56,8 @@
 
 ### Python
 
-- [discogs-sdk](https://github.com/jmfontaine/discogs-sdk) - Client covering every documented endpoint, with chainable calls and response caching.
-- [python3-discogs-client](https://github.com/joalla/discogs_client) - Most used client, the community continuation of the official one that Discogs deprecated in 2020, with OAuth.
+- [discogs-sdk](https://github.com/jmfontaine/discogs-sdk) - Client covering every documented v2 endpoint, with sync and async APIs, typed Pydantic models, and an optional in-memory or SQLite response cache.
+- [python3-discogs-client](https://github.com/joalla/discogs_client) - Most used client, the community continuation of the official one that Discogs deprecated in 2020, synchronous and with partial endpoint coverage.
 
 ### Rust
 
@@ -71,8 +71,8 @@
 ## Data Dump Tools
 
 - [Discogs Data Processor CLI](https://github.com/ofurkancoban/DiscogsCLI) - Downloads the dumps, extracts them, and converts them to CSV (source available).
-- [discogs-xml2db](https://github.com/philipmat/discogs-xml2db) - Converts the dumps to CSV and imports them into MySQL, PostgreSQL, or SQLite.
-- [discogskit](https://github.com/jmfontaine/discogskit) - Converts the dumps to Parquet or JSONL, or loads them into SQLite or PostgreSQL.
+- [discogs-xml2db](https://github.com/philipmat/discogs-xml2db) - Converts the dumps to CSV, then imports them into MySQL, PostgreSQL, or SQLite through separate scripts.
+- [discogskit](https://github.com/jmfontaine/discogskit) - Converts the dumps to Parquet or JSONL, or loads them into SQLite or PostgreSQL in one command, three times faster than discogs-xml2db.
 - [Discogsography](https://github.com/SimplicityGuy/discogsography) - Loads the dumps into Neo4j and PostgreSQL to explore releases as a graph (source available).
 
 ## Command-Line Tools
@@ -121,7 +121,7 @@
 
 ## AI and MCP Servers
 
-- [agent-discogs](https://github.com/jmfontaine/agent-discogs) - CLI for AI agents that keeps output short and API calls few.
+- [agent-discogs](https://github.com/jmfontaine/agent-discogs) - CLI built for AI agents, with compact text output, typed refs that chain one command into the next, a response cache, and a request budget per command.
 - [Discogs MCP](https://github.com/rianvdm/discogs-mcp) - Self-deployed MCP server with OAuth to search a collection, get stats and recommendations, and edit the wantlist.
 - [Discogs MCP Server](https://github.com/cswkim/discogs-mcp-server) - MCP server for database search, collections, wantlists, and the marketplace.
 
