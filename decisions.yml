@@ -212,13 +212,6 @@
   date: 2026-11-15
   reference: https://github.com/jmfontaine/awesome-discogs/pull/10
   note: "php-discogs-api covers the same endpoints without the legacy webservco framework."
-- name: "discogs-blocks"
-  url: https://github.com/marincarroll/discogs-blocks
-  outcome: rejected
-  reason: unmaintained
-  date: 2026-11-15
-  reference: https://github.com/jmfontaine/awesome-discogs/pull/10
-  note: "Last commit on 2025-11-29, so it leaves the 12-month window on 2026-11-29."
 - name: "discogs-cli (jrojas537)"
   url: https://github.com/jrojas537/discogs-cli
   outcome: rejected
@@ -862,11 +855,10 @@
 - name: "Vinylist"
   url: https://vinylist.studio/en/
   outcome: rejected
-  reason: too-new
+  reason: undocumented
   date: 2026-11-15
   reference: https://github.com/jmfontaine/awesome-discogs/pull/10
-  note: "Not released yet: its site announces the app as coming soon to the App Store."
-  revisit_after: 2027-05-14
+  note: "Not released yet: its site announces the app as coming soon to the App Store, so there is nothing to install."
 - name: "VinylMatch"
   url: https://github.com/luisleineweber/VinylMatch
   outcome: rejected

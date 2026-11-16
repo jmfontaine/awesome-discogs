@@ -90,7 +90,7 @@
 - [Discogs Sync](https://github.com/iamjoshk/discogs_sync) - Home Assistant integration with sensors for collection size, value, wantlist, and a random record.
 - [discogs-spotify](https://github.com/martiriera/discogs-spotify) - Web app that turns a collection, wantlist, or list into a Spotify playlist (source available).
 - [Discrobble](https://apps.apple.com/us/app/discrobble-vinyl-scrobbler/id6761305573) - iOS app that scrobbles records from a collection to Last.fm (paid, closed source).
-- [My Vinyl+](https://apps.apple.com/us/app/my-vinyl-scanner-for-discogs/id1547173908) - iOS app that syncs a collection and wantlist, scans barcodes, and shows collection value (closed source).
+- [My Vinyl+](https://apps.apple.com/us/app/my-vinyl-scanner-for-discogs/id1547173908) - iOS app that syncs a collection and wantlist and shows each record in 3D, with collection memories and value insights (closed source).
 - [NowSpinning](https://apps.apple.com/us/app/nowspinning-vinyl-collection/id6748545131) - iOS app that recognizes the record playing, logs the spin against the collection, and shows listening stats (closed source).
 - [Record Scanner](https://apps.apple.com/us/app/record-scanner-vinyl-cd/id1507752204) - iOS app that identifies records from the cover, barcode, or catalog number and adds them to a collection (closed source).
 - [VinylBox](https://vinylbox.app/) - iOS app to manage a collection and wantlist, scan barcodes, and list records on the marketplace (closed source).
@@ -109,7 +109,7 @@
 
 - [Discogs - Sort by Total Price in Marketplace](https://greasyfork.org/en/scripts/461485-discogs-sort-by-total-price-in-marketplace) - Userscript that sorts marketplace listings by price plus shipping.
 - [Discogs Edit Helper](https://greasyfork.org/en/scripts/562100-discogs-edit-helper) - Userscript that fills release edit forms from web stores and plain-text tracklists.
-- [Discogs Enhancer](https://github.com/salcido/discogs-enhancer) - Chrome and Firefox extension that adds seller blocking, dark themes, price comparisons, and marketplace filters (source available).
+- [Discogs Enhancer](https://github.com/salcido/discogs-enhancer) - Chrome and Firefox extension that adds seller blocking, dark themes, price comparisons, and marketplace filters, some of which scrape Discogs pages (source available).
 - [Discogs Submitter](https://github.com/denis-g/userscript-discogs-submitter) - Userscript that turns release pages from Bandcamp, Qobuz, Beatport, and other stores into Discogs drafts.
 - [MusicBrainz: Import from Discogs CSV](https://greasyfork.org/en/scripts/556207-musicbrainz-import-from-discogs-csv) - Userscript that adds the releases of a collection export to a MusicBrainz collection.
 
