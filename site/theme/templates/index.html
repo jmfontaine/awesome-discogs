@@ -1,5 +1,11 @@
+{% set marker_classes = {
+  "paid": "bg-amber-100 text-amber-800 dark:bg-amber-400/10 dark:text-amber-300",
+  "source available": "bg-violet-100 text-violet-800 dark:bg-violet-400/10 dark:text-violet-300",
+  "closed source": "bg-zinc-200 text-zinc-700 dark:bg-zinc-700/50 dark:text-zinc-300",
+} %}
+{% macro marker(name) %}<span class="rounded-full px-2 py-0.5 text-xs font-medium whitespace-nowrap {{ marker_classes[name] }}">{{ name }}</span>{% endmacro %}
 <!doctype html>
-<html lang="{{ DEFAULT_LANG }}">
+<html lang="{{ DEFAULT_LANG }}" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,45 +13,53 @@
   <meta name="description" content="{{ SUMMARY|striptags }}">
   <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/style.css">
 </head>
-<body>
-  <header>
-    <h1>{{ SITENAME }}</h1>
-    <p class="summary">{{ SUMMARY|safe }}</p>
-    <p class="meta">{{ TOOL_COUNT }} tools and resources · <a href="{{ REPOSITORY }}">Source on GitHub</a> · <a href="{{ REPOSITORY }}/blob/main/CONTRIBUTING.md">Contribute</a></p>
-    <nav aria-label="Sections">
-      <ul>
-        {% for section in SECTIONS %}
-        <li><a href="#{{ section.slug }}">{{ section.title }}</a></li>
-        {% endfor %}
-      </ul>
-    </nav>
-  </header>
+<body class="bg-white text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100">
+  <div class="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-16">
+    <header>
+      <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">{{ SITENAME }}</h1>
+      <p class="mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400 [&_a]:font-medium [&_a]:text-indigo-600 [&_a]:hover:underline dark:[&_a]:text-indigo-400">{{ SUMMARY|safe }}</p>
+      <p class="mt-3 text-sm text-zinc-500 dark:text-zinc-400">
+        {{ TOOL_COUNT }} tools and resources ·
+        <a class="font-medium text-indigo-600 hover:underline dark:text-indigo-400" href="{{ REPOSITORY }}">Source on GitHub</a> ·
+        <a class="font-medium text-indigo-600 hover:underline dark:text-indigo-400" href="{{ REPOSITORY }}/blob/main/CONTRIBUTING.md">Contribute</a>
+      </p>
+      <nav aria-label="Sections" class="mt-8">
+        <ul class="flex flex-wrap gap-2">
+          {% for section in SECTIONS %}
+          <li><a class="block rounded-full border border-zinc-200 px-3 py-1 text-sm text-zinc-700 transition hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-700 dark:border-zinc-800 dark:text-zinc-300 dark:hover:border-indigo-500/50 dark:hover:bg-indigo-500/10 dark:hover:text-indigo-300" href="#{{ section.slug }}">{{ section.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </header>
 
-  <main>
-    {% for section in SECTIONS %}
-    <section id="{{ section.slug }}">
-      <h2><a href="#{{ section.slug }}">{{ section.title }}</a></h2>
-      {% for group in section.groups %}
-      {% if group.title %}
-      <h3 id="{{ group.slug }}"><a href="#{{ group.slug }}">{{ group.title }}</a></h3>
-      {% endif %}
-      <ul class="tools">
-        {% for tool in group.tools %}
-        <li>
-          <a class="name" href="{{ tool.url }}">{{ tool.name }}</a>
-          {% for marker in tool.markers %}<span class="marker {{ marker|replace(' ', '-') }}">{{ marker }}</span>{% endfor %}
-          <p>{{ tool.description }}</p>
-        </li>
+    <main>
+      {% for section in SECTIONS %}
+      <section id="{{ section.slug }}" class="mt-14 scroll-mt-6">
+        <h2 class="border-b border-zinc-200 pb-2 text-2xl font-semibold tracking-tight dark:border-zinc-800"><a href="#{{ section.slug }}">{{ section.title }}</a></h2>
+        {% for group in section.groups %}
+        {% if group.title %}
+        <h3 id="{{ group.slug }}" class="mt-8 mb-3 scroll-mt-6 text-sm font-semibold tracking-wider text-zinc-500 uppercase dark:text-zinc-400"><a href="#{{ group.slug }}">{{ group.title }}</a></h3>
+        {% endif %}
+        <ul class="{{ 'mt-0' if group.title else 'mt-5' }} grid gap-3 sm:grid-cols-2">
+          {% for tool in group.tools %}
+          <li class="relative rounded-xl border border-zinc-200 bg-zinc-50 p-4 transition hover:border-indigo-300 hover:shadow-sm dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-indigo-500/50">
+            <div class="flex flex-wrap items-center gap-2">
+              <a class="font-semibold text-zinc-900 after:absolute after:inset-0 hover:text-indigo-600 dark:text-zinc-100 dark:hover:text-indigo-400" href="{{ tool.url }}">{{ tool.name }}</a>
+              {% for name in tool.markers %}{{ marker(name) }}{% endfor %}
+            </div>
+            <p class="mt-1.5 text-sm/6 text-zinc-600 dark:text-zinc-400">{{ tool.description }}</p>
+          </li>
+          {% endfor %}
+        </ul>
         {% endfor %}
-      </ul>
+      </section>
       {% endfor %}
-    </section>
-    {% endfor %}
-  </main>
+    </main>
 
-  <footer>
-    <p><span class="marker paid">paid</span> requires payment for its main features. <span class="marker source-available">source available</span> publishes its source code without an open source license. <span class="marker closed-source">closed source</span> has no public source code. Tools without a marker are open source.</p>
-    <p>Built from the list on <a href="{{ REPOSITORY }}">GitHub</a>.</p>
-  </footer>
+    <footer class="mt-16 border-t border-zinc-200 pt-6 text-sm/7 text-zinc-500 dark:border-zinc-800 dark:text-zinc-400">
+      <p>{{ marker("paid") }} requires payment for its main features. {{ marker("source available") }} publishes its source code without an open source license. {{ marker("closed source") }} has no public source code. Tools without a marker are open source.</p>
+      <p class="mt-2">Built from the list on <a class="font-medium text-indigo-600 hover:underline dark:text-indigo-400" href="{{ REPOSITORY }}">GitHub</a>.</p>
+    </footer>
+  </div>
 </body>
 </html>
