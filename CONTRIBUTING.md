@@ -106,4 +106,4 @@ The maintainers paste the Reply when closing; `<…>` marks the parts to fill in
 - For each new GitHub-hosted entry, the pull request checks also confirm that the repository exists under the linked name, isn't archived, has a readme, has a commit or a release in the last 12 months, and has a first commit at least 180 days old.
 - For each GitHub-hosted entry that is new or whose source marker changes, the pull request checks also compare the marker with the license GitHub detects, using the OSI approval in the [SPDX License List](https://spdx.org/licenses/).
 - To change the checks themselves, run `just qa`.
-- To preview the website built from the list, run `just serve` and open `http://localhost:8000`. `just site` builds it into `site/output`.
+- To preview the website built from the list, run `just serve` and open `http://localhost:8000`. `just site` builds it into `site/output`. Every push to `main` publishes it at `https://awesome-discogs.com`.

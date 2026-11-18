@@ -1,0 +1,35 @@
+name: Deploy
+
+# Builds the website from the list and uploads it to the Cloudflare Worker that serves
+# https://awesome-discogs.com. The Worker, its domain and its redirects are managed
+# outside this repository; this workflow only uploads the files.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# A new deployment waits for the running one, so an older build never lands last.
+concurrency:
+  group: deploy
+
+jobs:
+  deploy:
+    name: Deploy
+    # A manual run can start from any branch; only main reaches the website.
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+      - name: Build the website
+        run: uvx --from rust-just just site
+      - name: Upload the website
+        uses: cloudflare/wrangler-action@953926a2e2182532811c01a25e53647d93bf07c0 # v4.1.3
+        with:
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          workingDirectory: site

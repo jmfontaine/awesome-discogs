@@ -1,0 +1,12 @@
+{
+  // The Worker that serves https://awesome-discogs.com. Its domain and redirects are
+  // managed outside this repository, so this file sets no route and keeps the
+  // workers.dev and preview URLs off.
+  "name": "awesome-discogs",
+  "compatibility_date": "2026-11-17",
+  "assets": {
+    "directory": "./output"
+  },
+  "workers_dev": false,
+  "preview_urls": false
+}
